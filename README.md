@@ -21,6 +21,7 @@ In multi-threaded architectures running on real-time operating systems like **QN
 ## 🏗️ System Architecture
 
 The following diagram illustrates the component topology and data flow within Bastion-RT, showcasing how the isolated daemon monitors worker threads and streams telemetry without interrupting critical execution paths.
+
 ---
 
 ```mermaid
@@ -99,21 +100,22 @@ bastion-rt/
  * POSIX-compliant environment (Linux Ubuntu, GitHub Codespaces, or QNX SDP 8.0)
 
 2. Build via CLI
-# Clone the repository
+### Clone the repository
 ```
 git clone https://github.com/brysyl/bastion-rt.git
 cd bastion-rt
 ```
-# Configure and compile with release optimizations
+### Configure and compile with release optimizations
 
 ```
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 ```
 3. Run the Stress-Test Harness
-# Execute the daemon with simulated healthy and failing worker threads
+### Execute the daemon with simulated healthy and failing worker threads
 ```
 ./build/bastion_daemon --stress-test
+
 ```
 ---
 
@@ -132,6 +134,7 @@ Measured on QNX 8.0 (QEMU target) and GitHub Codespaces Linux container runtime:
 ## 🏆 Hackathon Context
 
 Engineered for the QNX Global Hackathon, Bastion-RT demonstrates how modern microkernel architectures can guarantee absolute determinism, fault isolation, and zero-allocation safety in next-generation software-defined vehicles and robotics.
+
 ---
 
 ## 📄 License
